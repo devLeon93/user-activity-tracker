@@ -31,3 +31,21 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# === Local environment / secrets ===
+.env
+*.local.yml
+*.secret.yml
+
+# === Docker ===
+docker-compose.override.yml
+
+# === Logs ===
+*.log
+logs/
+
+# === IDE trash (на всякий случай) ===
+.idea/
+.DS_Store
+
+
