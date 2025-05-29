@@ -40,6 +40,10 @@ build/
 # === Docker ===
 docker-compose.override.yml
 
+# Docker-related
+*.jar
+*.original
+
 # === Logs ===
 *.log
 logs/

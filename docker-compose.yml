@@ -7,11 +7,19 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: users_db
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - pg_data:/var/lib/postgresql/data
+
+  user-service:
+    build:
+      context: ./user-service
+    ports:
+      - "${SPRING_PORT}:8081"
+    depends_on:
+      - postgres
 
 volumes:
   pg_data:
